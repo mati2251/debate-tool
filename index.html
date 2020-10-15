@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Debate Tool</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Konfiguracja Debaty</h1>
+    <form>
+        <label for="idea">Teza: </label>
+        <input class="u-full-width" placeholder="Teza" id="idea"/>
+        <div class="row">
+            <div class="six columns">
+                <label for="howManyPeopleAgree">Ile osób zgadza się z tezą?</label>
+                <input class="u-full-width" type="number" placeholder="Liczba uczestników jest za" id="howManyPeopleAgree">
+            </div>
+            <div class="six columns">
+                <label for="howManyPeopleDisagree">Ile osób nie zgadza się z tezą?</label>
+                <input class="u-full-width" type="number" placeholder="Liczba uczestników jest przeciwko" id="howManyPeopleDisagree">
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <label for="time">Czas wypowiedzi? </label>
+                <input class="u-full-width" type="time" placeholder="Czas wypowiedz" id="time">
+            </div>
+            <div class="six columns">
+                <label for="blockTime">Czas chroniony od?</label>
+                <input class="u-full-width" type="time" placeholder="Czas chroniony" id="blockTime">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
