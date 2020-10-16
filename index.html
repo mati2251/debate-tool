@@ -8,30 +8,41 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Konfiguracja Debaty</h1>
-    <form>
-        <label for="idea">Teza: </label>
-        <input class="u-full-width" placeholder="Teza" id="idea"/>
-        <div class="row">
-            <div class="six columns">
-                <label for="howManyPeopleAgree">Ile osób zgadza się z tezą?</label>
-                <input class="u-full-width" type="number" placeholder="Liczba uczestników jest za" id="howManyPeopleAgree">
-            </div>
-            <div class="six columns">
-                <label for="howManyPeopleDisagree">Ile osób nie zgadza się z tezą?</label>
-                <input class="u-full-width" type="number" placeholder="Liczba uczestników jest przeciwko" id="howManyPeopleDisagree">
-            </div>
+<h1>Konfiguracja Debaty</h1>
+<form>
+    <label for="idea">Teza: </label>
+    <input class="u-full-width" placeholder="Teza" id="idea"
+           onkeydown="if (event.keyCode === 13) document.getElementById('howManyPeopleAgree').focus()"/>
+    <div class="row">
+        <div class="six columns">
+            <label for="howManyPeopleAgree">Ile osób zgadza się z tezą?</label>
+            <input class="u-full-width" type="number" placeholder="Liczba uczestników jest za" id="howManyPeopleAgree"
+                   min="0" max="20" value="5" onchange="peopleConfigList(event)"
+                   onkeydown="if (event.keyCode === 13) document.getElementById('howManyPeopleDisagree').focus()">
         </div>
-        <div class="row">
-            <div class="six columns">
-                <label for="time">Czas wypowiedzi? </label>
-                <input class="u-full-width" type="time" placeholder="Czas wypowiedz" id="time">
-            </div>
-            <div class="six columns">
-                <label for="blockTime">Czas chroniony od?</label>
-                <input class="u-full-width" type="time" placeholder="Czas chroniony" id="blockTime">
-            </div>
+        <div class="six columns">
+            <label for="howManyPeopleDisagree">Ile osób nie zgadza się z tezą?</label>
+            <input class="u-full-width" type="number" placeholder="Liczba uczestników jest przeciwko"
+                   id="howManyPeopleDisagree" min="0" max="20" value="5" onchange="peopleConfigList(event)"
+                   onkeydown="if (event.keyCode === 13) document.getElementById('time').focus()">
         </div>
-    </form>
+    </div>
+    <div class="row">
+        <div class="six columns">
+            <label for="time">Czas wypowiedzi? </label>
+            <input class="u-full-width" type="time" placeholder="Czas wypowiedz" id="time"
+                   onkeydown="if (event.keyCode === 13) document.getElementById('blockTime').focus()">
+        </div>
+        <div class="six columns">
+            <label for="blockTime">Czas chroniony od?</label>
+            <input class="u-full-width" type="time" placeholder="Czas chroniony" id="blockTime"
+                   onkeydown="if (event.keyCode === 13) document.getElementById('name-1').focus()">
+        </div>
+    </div>
+    <div id="peopleNameConfig">
+    </div>
+</form>
+<a class="button-primary" href="timer.html" id="submit" onclick="">Rozpocznij</a>
+<script src="index.js"></script>
 </body>
 </html>
