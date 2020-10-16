@@ -6,15 +6,7 @@
 </head>
 <body>
 <script>
-	const { session } = require('electron')
-	// Query all cookies.
-	session.defaultSession.cookies.get({})
-	.then((cookies) => {
-		console.log(cookies)
-	}).catch((error) => {
-		console.log(error)
-	})
-
+	console.log(localStorage.getItem("idea"))
 </script>
 </body>
 </html>
