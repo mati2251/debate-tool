@@ -1,0 +1,42 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table{
+    border: 3px solid #1EAEDB;
+    border-radius: 8px;
+    width: 8vh;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 10px;
+}
+
+.table-close{
+    border: 3px solid #1EAEDB;
+    border-radius: 8px;
+    width: 8vh;
+    height: 8vh;
+    background-color: #2aceff;
+    margin: 0 10px 0 10px;
+}
+
+.table-active section{
+    width: 5vh;
+    height: 5vh;
+    background-color: #2aceff;
+    border-radius: 100px;
+}
+
+.table-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+time{
+    font-size: 130px;
+}

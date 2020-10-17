@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <title>Debate Tool</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/timer.css">
 </head>
 <body>
-<script>
-	console.log(localStorage.getItem("idea"))
-</script>
+<h2 id="title"></h2>
+<h1>
+    <time>00:00</time>
+</h1>
+<div>
+    <button class="button-primary" id="start" onclick="startHandler()">Start</button>
+    <button class="button-primary" id="stop" disabled onclick="stopHandler()">Stop</button>
+    <button class="button-primary" id="clear" onclick="clearHandler()">Nastepna Osoba</button>
+</div>
+<script src="timer.js"></script>
 </body>
 </html>

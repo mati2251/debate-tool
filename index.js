@@ -1,6 +1,3 @@
-console.log(window.module)
-console.log(window)
-
 const peopleConfigList = (event) => {
 	const howManyAgree = parseInt(document.getElementById("howManyPeopleAgree").value)
 	const howManyDisagree = parseInt(document.getElementById("howManyPeopleDisagree").value)
@@ -47,8 +44,19 @@ const buttonHandler = () => {
 	if (isNaN(howManyPeopelAgree.value) || parseInt(howManyPeopelAgree.value) < 0 || parseInt(howManyPeopelDisagree.value) < 0 || isNaN(time.valueAsNumber) || time.valueAsNumber < blockTime.valueAsNumber) {
 		document.getElementById("warring").style.display = "block"
 	} else {
-		document.getElementById("warring").style.display = "none"
-		window.location.assign("file://timer.html")
+		document.getElementById("warring").style.display = "none";
+		localStorage.setItem("idea", idea.value)
+		localStorage.setItem("peopleAgree", howManyPeopelAgree.value)
+		localStorage.setItem("peopleDisagree", howManyPeopelDisagree.value)
+		localStorage.setItem("time", (time.valueAsNumber/60).toString())
+		localStorage.setItem("blockTime", (blockTime.valueAsNumber/60).toString())
+		for(let i=1; i<=howManyPeopelAgree; i++){
+			localStorage.setItem(`name-${i}`, document.getElementById(`name-${i}`).value)
+		}
+		for(let i=1; i<=howManyPeopelDisagree; i++){
+			localStorage.setItem(`name-dis-${i}`, document.getElementById(`name-dis-${i}`).value)
+		}
+		window.open('file://' + __dirname + '/timer.html');
 	}
 }
 
