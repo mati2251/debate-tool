@@ -50,10 +50,10 @@ const buttonHandler = () => {
 		localStorage.setItem("peopleDisagree", howManyPeopelDisagree.value)
 		localStorage.setItem("time", (time.valueAsNumber/60).toString())
 		localStorage.setItem("blockTime", (blockTime.valueAsNumber/60).toString())
-		for(let i=1; i<=howManyPeopelAgree; i++){
+		for(let i=1; i<=howManyPeopelAgree.value; i++){
 			localStorage.setItem(`name-${i}`, document.getElementById(`name-${i}`).value)
 		}
-		for(let i=1; i<=howManyPeopelDisagree; i++){
+		for(let i=1; i<=howManyPeopelDisagree.value; i++){
 			localStorage.setItem(`name-dis-${i}`, document.getElementById(`name-dis-${i}`).value)
 		}
 		window.open('file://' + __dirname + '/timer.html');
