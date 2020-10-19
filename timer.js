@@ -81,7 +81,7 @@ const drawTables = () => {
 
 	}
 
-	const howManyPeopleDisagree = localStorage.getItem("peopleAgree")
+	const howManyPeopleDisagree = localStorage.getItem("peopleDisagree")
 	const tablesDis = document.getElementById("tables-disagree")
 	tablesDis.innerHTML = ""
 	for (let i = 1; i <= parseInt(howManyPeopleDisagree); i++) {
