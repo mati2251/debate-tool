@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Debate Tool</title>
@@ -7,43 +8,45 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<h1>Konfiguracja Debaty</h1>
-<form>
-    <label for="idea">Teza: </label>
-    <input class="u-full-width" placeholder="Teza" id="idea"
-           onkeydown="if (event.keyCode === 13) document.getElementById('howManyPeopleAgree').focus()"/>
-    <div class="row">
-        <div class="six columns">
-            <label for="howManyPeopleAgree">Ile osób zgadza się z tezą?</label>
-            <input class="u-full-width" type="number" placeholder="Liczba uczestników jest za" id="howManyPeopleAgree"
-                   min="0" max="20" value="5" onchange="peopleConfigList(event)"
-                   onkeydown="if (event.keyCode === 13) document.getElementById('howManyPeopleDisagree').focus()">
+    <h1>Konfiguracja Debaty</h1>
+    <form>
+        <label for="idea">Teza: </label>
+        <input class="u-full-width" placeholder="Teza" id="idea"
+            onkeydown="if (event.keyCode === 13) document.getElementById('howManyPeopleAgree').focus()" />
+        <div class="row">
+            <div class="six columns">
+                <label for="howManyPeopleAgree">Ile osób zgadza się z tezą?</label>
+                <input class="u-full-width" type="number" placeholder="Liczba uczestników jest za"
+                    id="howManyPeopleAgree" min="0" max="20" value="5" onchange="peopleConfigList(event)"
+                    onkeydown="if (event.keyCode === 13) document.getElementById('howManyPeopleDisagree').focus()">
+            </div>
+            <div class="six columns">
+                <label for="howManyPeopleDisagree">Ile osób nie zgadza się z tezą?</label>
+                <input class="u-full-width" type="number" placeholder="Liczba uczestników jest przeciwko"
+                    id="howManyPeopleDisagree" min="0" max="20" value="5" onchange="peopleConfigList(event)"
+                    onkeydown="if (event.keyCode === 13) document.getElementById('time').focus()">
+            </div>
         </div>
-        <div class="six columns">
-            <label for="howManyPeopleDisagree">Ile osób nie zgadza się z tezą?</label>
-            <input class="u-full-width" type="number" placeholder="Liczba uczestników jest przeciwko"
-                   id="howManyPeopleDisagree" min="0" max="20" value="5" onchange="peopleConfigList(event)"
-                   onkeydown="if (event.keyCode === 13) document.getElementById('time').focus()">
+        <div class="row">
+            <div class="six columns">
+                <label for="time">Czas wypowiedzi? </label>
+                <input class="u-full-width" type="text" placeholder="Czas wypowiedz" id="time"
+                    onkeydown="if (event.keyCode === 13) document.getElementById('blockTime').focus()">
+            </div>
+            <div class="six columns">
+                <label for="blockTime">Czas chroniony od?</label>
+                <input class="u-full-width" type="text" placeholder="Czas chroniony" id="blockTime"
+                    onkeydown="if (event.keyCode === 13) document.getElementById('name-1').focus()">
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="six columns">
-            <label for="time">Czas wypowiedzi? </label>
-            <input class="u-full-width" type="time" placeholder="Czas wypowiedz" id="time"
-                   onkeydown="if (event.keyCode === 13) document.getElementById('blockTime').focus()">
+        <div id="peopleNameConfig">
         </div>
-        <div class="six columns">
-            <label for="blockTime">Czas chroniony od?</label>
-            <input class="u-full-width" type="time" placeholder="Czas chroniony" id="blockTime"
-                   onkeydown="if (event.keyCode === 13) document.getElementById('name-1').focus()">
-        </div>
-    </div>
-    <div id="peopleNameConfig">
-    </div>
-</form>
-<h3 style="display: none; color: red" id="warring">Wprowadziłeś złe dane</h3>
-<button class="button-primary" id="submit" onclick="buttonHandler()">Rozpocznij</button>
-<script src="index.js"></script>
+    </form>
+    <h3 style="display: none; color: red" id="warring">Wprowadziłeś złe dane</h3>
+    <button class="button-primary" id="submit" onclick="buttonHandler()">Rozpocznij</button>
+    <script src="index.js"></script>
 </body>
+
 </html>
