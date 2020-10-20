@@ -39,17 +39,14 @@ const buttonHandler = () => {
 	const idea = document.getElementById("idea")
 	const howManyPeopelAgree = document.getElementById("howManyPeopleAgree")
 	const howManyPeopelDisagree = document.getElementById("howManyPeopleDisagree")
-	let time = document.getElementById("time").value
-	timea = time.split(':')
-	time = ((parseInt(timea[0]) || 0) + (parseInt(timea[1]) || 0))
-	let blockTime = document.getElementById("blockTime").value
-	blockTimea = blockTime.split(':')
-	blockTime = ((parseInt(blockTimea[0]) || 0) * 60) + (parseInt(blockTimea[1]) || 0)
+	const timea = document.getElementById("time").value.split(':')
+	const time = ((parseInt(timea[0]) || 0) + (parseInt(timea[1]) || 0))
+	const blockTimea = document.getElementById("blockTime").value.split(':')
+	const blockTime = ((parseInt(blockTimea[0]) || 0) * 60) + (parseInt(blockTimea[1]) || 0)
 	if (isNaN(howManyPeopelAgree.value) || parseInt(howManyPeopelAgree.value) < 0 || parseInt(howManyPeopelDisagree.value) < 0 ||
 		isNaN(time) || (parseInt(time) < parseInt(blockTime))) {
 		document.getElementById("warring").style.display = "block"
 	} else {
-		console.log(time)
 		document.getElementById("warring").style.display = "none";
 		localStorage.setItem("idea", idea.value)
 		localStorage.setItem("peopleAgree", howManyPeopelAgree.value)
