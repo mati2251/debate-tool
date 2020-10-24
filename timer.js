@@ -13,9 +13,9 @@ const add = () => {
 		seconds = parseInt(tmp[1]) + 1
 		minutes = parseInt(tmp[0])
 	}
-	if (((minutes * 60 + seconds) * 1000) === parseInt(localStorage.getItem("blockTime"))) {
+	if (((minutes * 60 + seconds)) === parseInt(localStorage.getItem("blockTime"))) {
 		document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd278"
-	} else if (((minutes * 60 + seconds) * 1000) === parseInt(localStorage.getItem("time"))) {
+	} else if (((minutes * 60 + seconds)) === parseInt(localStorage.getItem("time"))) {
 		document.getElementsByTagName("body")[0].style.backgroundColor = "#ff695e"
 	}
 	time.innerText = `${minutes > 9 ? minutes : "0" + minutes}:${seconds > 9 ? seconds : "0" + seconds}`
@@ -45,15 +45,15 @@ const clearHandler = () => {
 	if (nextPerson) {
 		if (agreePersonActive) {
 			agreePersonActive = !agreePersonActive;
-			const table = document.getElementById(`agree-table-${actualPerson-1}`)
-			if(table !== null){
+			const table = document.getElementById(`agree-table-${actualPerson - 1}`)
+			if (table !== null) {
 				table.scrollIntoView()
 			}
 		} else {
 			actualPerson++;
 			agreePersonActive = !agreePersonActive;
-			const table = document.getElementById(`disagree-table-${actualPerson-1}`)
-			if(table !== null){
+			const table = document.getElementById(`disagree-table-${actualPerson - 1}`)
+			if (table !== null) {
 				table.scrollIntoView()
 			}
 		}
