@@ -1,0 +1,43 @@
+---
+kind: pipeline
+
+steps:
+  - name: Electron packager
+    image: mlunax/drone-electron-packager
+    settings:
+      APPNAME: debate-tool
+      PLATFORM: linux
+      ARCH: x64
+      TARGZ: true
+      COPYTO: /debate-tool
+    volumes:
+      - name: cache
+        path: /debate-tool
+
+  - name: upload
+    image: plugins/s3
+    settings:
+      bucket:
+        from_secret: bucket
+      source: /debate-tool/**/*
+      target:
+        from_secret: target
+      endpoint:
+        from_secret: endpoint
+      access_key:
+        from_secret: e_login
+      secret_key:
+        from_secret: e_pass
+      path_style: true
+    volumes:
+      - name: cache
+        path: /debate-tool
+    when:
+      event:
+        - promote
+      target:
+        - production
+
+volumes:
+  - name: cache
+    temp: {}
